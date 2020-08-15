@@ -43,7 +43,7 @@ function initializeDiscourseRandomInviteesList(api) {
           const shuffledUsernames = shuffle(usernames, seed);
           const list = shuffledUsernames.map(s => `<li>${s}</li>`);
           wrap.innerHTML = `<h4>Order</h4><ul>${list.join("")}</ul>`;
-        } else {
+        } else if (wrap) {
           wrap.innerHTML = "";
         }
       }
