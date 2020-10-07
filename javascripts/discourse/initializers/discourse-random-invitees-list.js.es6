@@ -28,6 +28,11 @@ function initializeDiscourseRandomInviteesList(api) {
     (cooked, helper) => {
       if (helper) {
         const post = helper.getModel();
+
+        if (!post) {
+          return;
+        }
+
         const wrap = cooked.querySelector("span[data-wrap=random-invitees]");
 
         if (
